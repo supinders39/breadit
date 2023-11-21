@@ -7,6 +7,7 @@ const auth = (req: Request) => ({ id: "fakeId" }); // Fake auth function
 
 export const ourFileRouter = {
     imageUploader: f({ image: { maxFileSize: "4MB" } })
+        // @ts-ignore
         .middleware(async ({ req }) => {
             const user = await auth(req);
 
@@ -14,6 +15,7 @@ export const ourFileRouter = {
 
             return { userId: user.id };
         })
+        //@ts-ignore
         .onUploadComplete(async ({ metadata, file }) => {
             return { uploadedBy: metadata.userId };
         }),
