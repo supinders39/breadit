@@ -1,1 +1,5 @@
-8:35:40
+# run in development mode
+`npm run dev`
+
+# Node version:
+`16`
